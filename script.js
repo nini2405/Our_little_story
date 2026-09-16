@@ -85,43 +85,29 @@ if (littleThingsSection) {
 }
 
 
-// =========================
-// TIMELINE ANIMATION
-// =========================
+function toggleSong() {
 
-const timelineItems =
-    document.querySelectorAll(".timeline-item");
+    const song = document.getElementById("ourSong");
+    const button = document.getElementById("playButton");
 
-const timelineObserver =
-    new IntersectionObserver(
-        function (entries) {
+    if (!song || !button) {
+        return;
+    }
 
-            entries.forEach(function (entry) {
+    if (song.paused) {
 
-                if (entry.isIntersecting) {
-
-                    timelineItems.forEach(function (item) {
-
-                        item.classList.add("visible");
-
-                    });
-
-                }
-
+        song.play()
+            .then(function () {
+                button.textContent = "⏸";
+            })
+            .catch(function () {
+                alert("The song could not be played. Please check the audio file.");
             });
 
-        },
-        {
-            threshold: 0.2
-        }
-    );
+    } else {
 
+        song.pause();
+        button.textContent = "▶";
 
-const timelineSection =
-    document.querySelector(".timeline-section");
-
-if (timelineSection) {
-
-    timelineObserver.observe(timelineSection);
-
+    }
 }
