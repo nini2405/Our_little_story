@@ -1,37 +1,52 @@
 // =========================================================
-// 🌌 OUR LITTLE STORY — GALAXY SCRIPT
+// 🌌 OUR LITTLE STORY — GALAXY JAVASCRIPT
 // =========================================================
 
 
 // =========================================================
-// OPEN WEBSITE
+// 💜 OPEN WEBSITE BUTTON
 // =========================================================
 
 const openButton = document.getElementById("openButton");
 const intro = document.querySelector(".intro");
 const mainContent = document.getElementById("mainContent");
 
+
 if (openButton) {
 
     openButton.addEventListener("click", function () {
 
-        intro.style.transition =
-            "opacity 1.2s ease, transform 1.2s ease";
+        // Fade out intro
+        if (intro) {
 
-        intro.style.opacity = "0";
-        intro.style.transform = "scale(1.03)";
+            intro.style.transition =
+                "opacity 1.2s ease, transform 1.2s ease";
 
+            intro.style.opacity = "0";
+
+            intro.style.transform = "scale(1.03)";
+        }
+
+
+        // Show main website
         setTimeout(function () {
 
-            intro.style.display = "none";
+            if (intro) {
+                intro.style.display = "none";
+            }
 
-            mainContent.style.display = "block";
+            if (mainContent) {
 
-            window.scrollTo({
-                top: 0,
-                behavior: "instant"
-            });
+                mainContent.style.display = "block";
 
+                window.scrollTo({
+                    top: 0,
+                    behavior: "instant"
+                });
+            }
+
+
+            // Show memory section
             const memory =
                 document.querySelector(".memory-wrapper");
 
@@ -47,7 +62,277 @@ if (openButton) {
 
 
 // =========================================================
-// OPEN WHEN LETTERS
+// ⭐ CREATE GALAXY
+// =========================================================
+
+function createGalaxy() {
+
+    // Main star container
+    const starContainer =
+        document.createElement("div");
+
+    starContainer.className =
+        "galaxy-stars";
+
+    document.body.appendChild(starContainer);
+
+
+    // Create 180 stars
+    for (let i = 0; i < 180; i++) {
+
+        const star =
+            document.createElement("span");
+
+        star.className =
+            "galaxy-star";
+
+
+        const size =
+            (Math.random() * 2.5 + 0.7).toFixed(2);
+
+        const x =
+            Math.random() * 100;
+
+        const y =
+            Math.random() * 100;
+
+        const opacity =
+            (Math.random() * 0.65 + 0.2).toFixed(2);
+
+        const duration =
+            (Math.random() * 4 + 2).toFixed(2);
+
+        const delay =
+            (Math.random() * 5).toFixed(2);
+
+
+        star.style.setProperty(
+            "--size",
+            size + "px"
+        );
+
+        star.style.setProperty(
+            "--x",
+            x + "%"
+        );
+
+        star.style.setProperty(
+            "--y",
+            y + "%"
+        );
+
+        star.style.setProperty(
+            "--opacity",
+            opacity
+        );
+
+        star.style.setProperty(
+            "--duration",
+            duration + "s"
+        );
+
+        star.style.setProperty(
+            "--delay",
+            delay + "s"
+        );
+
+
+        starContainer.appendChild(star);
+    }
+
+
+    // =====================================================
+    // 🌌 NEBULA
+    // =====================================================
+
+    const nebulaOne =
+        document.createElement("div");
+
+    nebulaOne.className =
+        "galaxy-nebula one";
+
+    document.body.appendChild(nebulaOne);
+
+
+    const nebulaTwo =
+        document.createElement("div");
+
+    nebulaTwo.className =
+        "galaxy-nebula two";
+
+    document.body.appendChild(nebulaTwo);
+
+
+    // =====================================================
+    // 🌙 MOON
+    // =====================================================
+
+    const moon =
+        document.createElement("div");
+
+    moon.className =
+        "galaxy-moon";
+
+    document.body.appendChild(moon);
+
+
+    // =====================================================
+    // ☄️ SHOOTING STARS
+    // =====================================================
+
+    for (let i = 0; i < 3; i++) {
+
+        const shootingStar =
+            document.createElement("div");
+
+        shootingStar.className =
+            "shooting-star";
+
+        document.body.appendChild(shootingStar);
+    }
+
+}
+
+
+// =========================================================
+// 💫 FLOATING HEARTS
+// =========================================================
+
+function createFloatingHeart() {
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "floating-heart";
+
+    heart.textContent =
+        Math.random() > 0.5 ? "♡" : "✦";
+
+
+    const size =
+        Math.random() * 12 + 10;
+
+    const duration =
+        Math.random() * 8 + 8;
+
+    const drift =
+        Math.random() * 100 - 50;
+
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+
+    heart.style.setProperty(
+        "--heart-size",
+        size + "px"
+    );
+
+
+    heart.style.setProperty(
+        "--heart-duration",
+        duration + "s"
+    );
+
+
+    heart.style.setProperty(
+        "--heart-drift",
+        drift + "px"
+    );
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(function () {
+
+        heart.remove();
+
+    }, duration * 1000);
+
+}
+
+
+// Create hearts occasionally
+setInterval(function () {
+
+    // Don't overdo it
+    if (document.hidden) return;
+
+    createFloatingHeart();
+
+}, 4500);
+
+
+// =========================================================
+// 🖱️ CURSOR GLOW
+// =========================================================
+
+function createCursorGlow() {
+
+    // Don't create on mobile
+    if (window.innerWidth <= 700) {
+        return;
+    }
+
+
+    const glow =
+        document.createElement("div");
+
+    glow.className =
+        "cursor-glow";
+
+    document.body.appendChild(glow);
+
+
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+
+    let currentX = mouseX;
+    let currentY = mouseY;
+
+
+    document.addEventListener(
+        "mousemove",
+        function (event) {
+
+            mouseX = event.clientX;
+            mouseY = event.clientY;
+
+        }
+    );
+
+
+    function animateCursor() {
+
+        currentX +=
+            (mouseX - currentX) * 0.08;
+
+        currentY +=
+            (mouseY - currentY) * 0.08;
+
+
+        glow.style.left =
+            currentX + "px";
+
+        glow.style.top =
+            currentY + "px";
+
+
+        requestAnimationFrame(
+            animateCursor
+        );
+    }
+
+
+    animateCursor();
+
+}
+
+
+// =========================================================
+// 💌 OPEN WHEN LETTERS
 // =========================================================
 
 function openLetter(card) {
@@ -60,49 +345,48 @@ function openLetter(card) {
 
 
 // =========================================================
-// LOVE CARDS ANIMATION
+// ✨ LOVE CARDS ANIMATION
 // =========================================================
 
 const loveCards =
     document.querySelectorAll(".love-card");
 
+
+const cardObserver =
+    new IntersectionObserver(
+
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    loveCards.forEach(
+                        function (card) {
+
+                            card.classList.add("show");
+
+                        }
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.2
+        }
+
+    );
+
+
 const littleThingsSection =
     document.querySelector(".little-things");
 
-if (
-    loveCards.length > 0 &&
-    littleThingsSection &&
-    "IntersectionObserver" in window
-) {
 
-    const cardObserver =
-        new IntersectionObserver(
-
-            function (entries) {
-
-                entries.forEach(function (entry) {
-
-                    if (entry.isIntersecting) {
-
-                        loveCards.forEach(
-                            function (card) {
-
-                                card.classList.add("show");
-
-                            }
-                        );
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.2
-            }
-
-        );
+if (littleThingsSection) {
 
     cardObserver.observe(
         littleThingsSection
@@ -123,8 +407,6 @@ function toggleSong() {
     const button =
         document.getElementById("playButton");
 
-    const songCard =
-        document.querySelector(".song-card");
 
     if (!song || !button) {
         return;
@@ -139,11 +421,9 @@ function toggleSong() {
 
                 button.textContent = "⏸";
 
-                if (songCard) {
-                    songCard.classList.add(
-                        "is-playing"
-                    );
-                }
+                button.classList.add(
+                    "playing"
+                );
 
             })
 
@@ -163,13 +443,9 @@ function toggleSong() {
 
         button.textContent = "▶";
 
-        if (songCard) {
-
-            songCard.classList.remove(
-                "is-playing"
-            );
-
-        }
+        button.classList.remove(
+            "playing"
+        );
 
     }
 
@@ -177,257 +453,48 @@ function toggleSong() {
 
 
 // =========================================================
-// 🎵 SONG EVENTS
+// 🎵 RESET BUTTON WHEN SONG ENDS
+// =========================================================
+
+const ourSong =
+    document.getElementById("ourSong");
+
+
+if (ourSong) {
+
+    ourSong.addEventListener(
+        "ended",
+        function () {
+
+            const button =
+                document.getElementById("playButton");
+
+            if (button) {
+
+                button.textContent = "▶";
+
+                button.classList.remove(
+                    "playing"
+                );
+            }
+
+        }
+    );
+
+}
+
+
+// =========================================================
+// 🌌 START GALAXY
 // =========================================================
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-        const song =
-            document.getElementById("ourSong");
+        createGalaxy();
 
-        const button =
-            document.getElementById("playButton");
-
-        const songCard =
-            document.querySelector(".song-card");
-
-
-        if (!song || !button) {
-            return;
-        }
-
-
-        song.addEventListener(
-            "play",
-            function () {
-
-                button.textContent = "⏸";
-
-                if (songCard) {
-                    songCard.classList.add(
-                        "is-playing"
-                    );
-                }
-
-            }
-        );
-
-
-        song.addEventListener(
-            "pause",
-            function () {
-
-                button.textContent = "▶";
-
-                if (songCard) {
-                    songCard.classList.remove(
-                        "is-playing"
-                    );
-                }
-
-            }
-        );
-
-
-        song.addEventListener(
-            "ended",
-            function () {
-
-                button.textContent = "▶";
-
-                if (songCard) {
-                    songCard.classList.remove(
-                        "is-playing"
-                    );
-                }
-
-            }
-        );
-
-    }
-);
-
-
-// =========================================================
-// 🌌 GALAXY BACKGROUND
-// =========================================================
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        const galaxy =
-            document.createElement("div");
-
-        galaxy.className =
-            "galaxy-background";
-
-        document.body.prepend(galaxy);
-
-
-        // =================================================
-        // ⭐ SMALL STARS
-        // =================================================
-
-        const starCount = 130;
-
-        for (let i = 0; i < starCount; i++) {
-
-            const star =
-                document.createElement("span");
-
-            star.className =
-                "galaxy-star";
-
-            star.style.left =
-                Math.random() * 100 + "%";
-
-            star.style.top =
-                Math.random() * 100 + "%";
-
-
-            const size =
-                Math.random() * 2.2 + 0.5;
-
-            star.style.width =
-                size + "px";
-
-            star.style.height =
-                size + "px";
-
-
-            star.style.animationDelay =
-                Math.random() * 5 + "s";
-
-
-            star.style.animationDuration =
-                Math.random() * 4 + 2 + "s";
-
-
-            galaxy.appendChild(star);
-
-        }
-
-
-        // =================================================
-        // ✦ BIGGER SPARKLES
-        // =================================================
-
-        const sparkleSymbols =
-            ["✦", "✧", "⋆", "✦"];
-
-
-        for (let i = 0; i < 18; i++) {
-
-            const sparkle =
-                document.createElement("span");
-
-            sparkle.className =
-                "galaxy-sparkle";
-
-            sparkle.textContent =
-                sparkleSymbols[
-                    Math.floor(
-                        Math.random() *
-                        sparkleSymbols.length
-                    )
-                ];
-
-
-            sparkle.style.left =
-                Math.random() * 100 + "%";
-
-            sparkle.style.top =
-                Math.random() * 100 + "%";
-
-
-            sparkle.style.animationDelay =
-                Math.random() * 6 + "s";
-
-
-            sparkle.style.fontSize =
-                Math.random() * 9 + 7 + "px";
-
-
-            galaxy.appendChild(sparkle);
-
-        }
-
-
-        // =================================================
-        // ☄️ SHOOTING STARS
-        // =================================================
-
-        for (let i = 0; i < 4; i++) {
-
-            const shootingStar =
-                document.createElement("span");
-
-            shootingStar.className =
-                "shooting-star";
-
-
-            shootingStar.style.left =
-                55 + Math.random() * 45 + "%";
-
-            shootingStar.style.top =
-                Math.random() * 55 + "%";
-
-
-            shootingStar.style.animationDelay =
-                i * 4 + "s";
-
-
-            galaxy.appendChild(
-                shootingStar
-            );
-
-        }
-
-
-        // =================================================
-        // 🌙 MOON
-        // =================================================
-
-        const intro =
-            document.querySelector(".intro");
-
-
-        if (intro) {
-
-            const moon =
-                document.createElement("div");
-
-            moon.className =
-                "galaxy-moon";
-
-            intro.appendChild(moon);
-
-        }
-
-    }
-);
-
-
-// =========================================================
-// ✨ MOUSE GLOW
-// =========================================================
-
-document.addEventListener(
-    "mousemove",
-    function (event) {
-
-        document.documentElement.style.setProperty(
-            "--mouse-x",
-            event.clientX + "px"
-        );
-
-        document.documentElement.style.setProperty(
-            "--mouse-y",
-            event.clientY + "px"
-        );
+        createCursorGlow();
 
     }
 );
