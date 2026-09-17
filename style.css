@@ -1415,3 +1415,859 @@ button:hover {
     }
 
 }
+/* =========================================================
+   🌌 OUR LITTLE STORY — GALAXY THEME
+   Paste this at the END of style.css
+   ========================================================= */
+
+/* ---------- GALAXY VARIABLES ---------- */
+
+:root {
+    --space-black: #02030a;
+    --space-dark: #050719;
+    --space-blue: #0b1030;
+    --purple: #9d8cff;
+    --purple-soft: #7567d9;
+    --blue-glow: #607cff;
+    --moon: #f4f1ff;
+    --text: #f3f0ff;
+    --text-soft: #b9b4d4;
+    --glass: rgba(255, 255, 255, 0.055);
+    --glass-border: rgba(190, 178, 255, 0.22);
+}
+
+
+/* ---------- MAIN PAGE ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(92, 73, 180, 0.16),
+            transparent 28%),
+        radial-gradient(circle at 85% 65%,
+            rgba(50, 78, 190, 0.12),
+            transparent 30%),
+        linear-gradient(
+            135deg,
+            #010208,
+            #050719 45%,
+            #02030b
+        );
+
+    color: var(--text);
+}
+
+
+/* ---------- GLOBAL GALAXY GLOW ---------- */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(117, 96, 220, 0.08),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(70, 92, 220, 0.06),
+            transparent 25%
+        );
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* =========================================================
+   🌙 INTRO
+   ========================================================= */
+
+.intro {
+    background:
+        radial-gradient(
+            circle at 50% 38%,
+            rgba(112, 91, 220, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 20% 70%,
+            rgba(48, 65, 160, 0.12),
+            transparent 30%
+        ),
+        #02030a !important;
+
+    overflow: hidden;
+}
+
+
+/* Nebula */
+
+.intro::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(141, 113, 255, 0.15),
+            transparent 60%
+        ) !important;
+
+    filter: blur(45px);
+}
+
+
+/* Existing stars */
+
+.intro::after {
+    color: rgba(220, 215, 255, 0.75) !important;
+    opacity: 0.8;
+}
+
+
+/* Intro text */
+
+.intro-content {
+    position: relative;
+    z-index: 5;
+}
+
+.intro-content h1 {
+    color: #ffffff !important;
+
+    text-shadow:
+        0 0 12px rgba(157, 140, 255, 0.35),
+        0 0 35px rgba(108, 92, 220, 0.18);
+}
+
+.intro-content p,
+.intro-content .handwritten {
+    color: var(--text-soft) !important;
+}
+
+
+/* ---------- OPEN BUTTON ---------- */
+
+#openButton {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(157, 140, 255, 0.18),
+            rgba(75, 94, 210, 0.12)
+        ) !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid rgba(180, 166, 255, 0.4) !important;
+
+    box-shadow:
+        0 0 15px rgba(127, 106, 255, 0.18),
+        inset 0 0 15px rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+#openButton:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(200, 190, 255, 0.75) !important;
+
+    box-shadow:
+        0 0 20px rgba(137, 117, 255, 0.45),
+        0 0 55px rgba(91, 80, 210, 0.18);
+}
+
+
+/* ---------- INTRO DECORATIVE STARS ---------- */
+
+.intro-star {
+    color: #ddd8ff !important;
+
+    text-shadow:
+        0 0 8px #aaa0ff,
+        0 0 20px rgba(137, 117, 255, 0.7);
+}
+
+
+/* =========================================================
+   🖼️ PHOTO SECTION
+   ========================================================= */
+
+.photo-section {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(112, 94, 215, 0.12),
+            transparent 35%
+        ),
+        #03040d !important;
+
+    color: var(--text) !important;
+}
+
+
+.photo-section::before {
+    content: "✦    ·    ✧    ·    ✦";
+
+    position: absolute;
+    top: 50px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(194, 185, 255, 0.35);
+
+    letter-spacing: 20px;
+
+    font-size: 12px;
+}
+
+
+.memory-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Photo frame */
+
+.polaroid {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.09),
+            rgba(255,255,255,0.025)
+        ) !important;
+
+    border: 1px solid rgba(190, 181, 255, 0.3) !important;
+
+    box-shadow:
+        0 0 20px rgba(118, 99, 225, 0.12),
+        0 20px 70px rgba(0,0,0,0.45) !important;
+}
+
+
+.polaroid img {
+    filter:
+        grayscale(15%)
+        contrast(1.05)
+        brightness(0.92) !important;
+}
+
+
+.memory-note h2 {
+    color: #ffffff !important;
+
+    text-shadow:
+        0 0 18px rgba(157, 140, 255, 0.25);
+}
+
+
+.memory-note p {
+    color: var(--text-soft) !important;
+}
+
+
+/* =========================================================
+   💜 MESSAGE SECTION
+   ========================================================= */
+
+.message-section {
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(121, 98, 235, 0.14),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(61, 81, 190, 0.10),
+            transparent 28%
+        ),
+        #040511 !important;
+
+    color: var(--text) !important;
+}
+
+
+.message-section h2 {
+    color: #ffffff !important;
+
+    text-shadow:
+        0 0 20px rgba(153, 137, 255, 0.25);
+}
+
+
+.message-section p {
+    color: #c6c1df !important;
+}
+
+
+.message-section .highlight {
+    color: #ffffff !important;
+
+    text-shadow:
+        0 0 12px rgba(160, 144, 255, 0.4);
+}
+
+
+/* =========================================================
+   ✨ LITTLE THINGS
+   ========================================================= */
+
+.little-things {
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(115, 94, 220, 0.12),
+            transparent 35%
+        ),
+        #02030b !important;
+
+    color: var(--text) !important;
+}
+
+
+.little-things h2 {
+    color: #ffffff !important;
+}
+
+
+/* Fix HTML class mismatch */
+
+.love-grid {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Love cards */
+
+.love-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(120,105,220,0.035)
+        ) !important;
+
+    border: 1px solid var(--glass-border) !important;
+
+    color: var(--text) !important;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.3),
+        inset 0 0 20px rgba(155,140,255,0.025);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+.love-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(170, 157, 255, 0.55) !important;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.45),
+        0 0 30px rgba(119, 101, 226, 0.18);
+}
+
+
+.love-card h3 {
+    color: #ffffff !important;
+}
+
+
+.love-card p {
+    color: #aaa5c4 !important;
+}
+
+
+.love-card .icon {
+    color: var(--purple) !important;
+
+    text-shadow:
+        0 0 12px rgba(157, 140, 255, 0.7);
+}
+
+
+/* =========================================================
+   💌 OPEN WHEN
+   ========================================================= */
+
+.open-when {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(111, 91, 215, 0.13),
+            transparent 35%
+        ),
+        #03040d !important;
+
+    color: var(--text) !important;
+}
+
+
+.open-when h2 {
+    color: #ffffff !important;
+}
+
+
+.open-when > p {
+    color: #aaa5c4 !important;
+}
+
+
+/* Letter card */
+
+.letter-card {
+    background: transparent !important;
+}
+
+
+/* Letter front */
+
+.letter-front {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(150, 135, 240, 0.13),
+            rgba(255,255,255,0.035)
+        ) !important;
+
+    border: 1px solid rgba(180, 165, 255, 0.27) !important;
+
+    color: #ffffff !important;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35),
+        inset 0 0 25px rgba(130, 110, 230, 0.03);
+}
+
+
+.letter-front:hover {
+    border-color: rgba(193, 182, 255, 0.65) !important;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.45),
+        0 0 28px rgba(120, 102, 230, 0.2);
+}
+
+
+.letter-front .icon {
+    color: #b9adff !important;
+
+    text-shadow:
+        0 0 14px rgba(157, 140, 255, 0.7);
+}
+
+
+.letter-front h3 {
+    color: #ffffff !important;
+}
+
+
+.letter-front p {
+    color: #aaa5c4 !important;
+}
+
+
+/* Letter back */
+
+.letter-back {
+    background:
+        linear-gradient(
+            145deg,
+            #09091b,
+            #04040d
+        ) !important;
+
+    border: 1px solid rgba(165, 150, 245, 0.3) !important;
+
+    color: #ddd8f2 !important;
+
+    box-shadow:
+        0 0 35px rgba(105, 89, 200, 0.15);
+}
+
+
+/* =========================================================
+   🎵 SONG SECTION
+   ========================================================= */
+
+.song-section {
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(91, 80, 190, 0.15),
+            transparent 38%
+        ),
+        #02030a !important;
+
+    color: var(--text) !important;
+}
+
+
+.song-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(120,105,220,0.04)
+        ) !important;
+
+    border: 1px solid rgba(180, 165, 255, 0.24) !important;
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        0 0 40px rgba(100, 87, 210, 0.08);
+}
+
+
+.song-card h2,
+.song-card h3 {
+    color: #ffffff !important;
+}
+
+
+.song-card p {
+    color: #aaa5c4 !important;
+}
+
+
+/* Song image */
+
+.song-card img {
+    filter:
+        brightness(0.85)
+        contrast(1.05)
+        saturate(0.85);
+}
+
+
+/* ---------- PLAY BUTTON ---------- */
+
+#playButton {
+    background:
+        radial-gradient(
+            circle,
+            rgba(154, 138, 255, 0.28),
+            rgba(82, 70, 170, 0.12)
+        ) !important;
+
+    border: 1px solid rgba(191, 179, 255, 0.45) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 0 15px rgba(133, 115, 245, 0.3),
+        0 0 40px rgba(94, 78, 200, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#playButton:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(150, 135, 255, 0.55),
+        0 0 65px rgba(98, 82, 210, 0.2);
+}
+
+
+/* =========================================================
+   🌙 FINAL SECTION
+   ========================================================= */
+
+.final-section {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(117, 98, 225, 0.2),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(55, 72, 180, 0.12),
+            transparent 30%
+        ),
+        #010208 !important;
+
+    color: #ffffff !important;
+
+    overflow: hidden;
+}
+
+
+.final-section h2 {
+    color: #ffffff !important;
+
+    text-shadow:
+        0 0 15px rgba(190, 180, 255, 0.35),
+        0 0 45px rgba(116, 99, 225, 0.2);
+}
+
+
+.final-section p {
+    color: #bcb6d5 !important;
+}
+
+
+.final-section .signature {
+    color: #d5ceff !important;
+
+    text-shadow:
+        0 0 10px rgba(169, 153, 255, 0.65),
+        0 0 30px rgba(111, 93, 220, 0.25);
+}
+
+
+/* =========================================================
+   ✨ UNIVERSAL GLOW
+   ========================================================= */
+
+.love-card,
+.letter-front,
+.song-card,
+.polaroid {
+    will-change: transform;
+}
+
+
+/* =========================================================
+   ⭐ STAR PARTICLES
+   ========================================================= */
+
+.galaxy-star {
+    position: fixed;
+
+    width: 2px;
+    height: 2px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    opacity: 0.25;
+
+    animation:
+        twinkle 3s ease-in-out infinite;
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.5);
+    }
+}
+
+
+/* =========================================================
+   ☄️ SHOOTING STARS
+   ========================================================= */
+
+.shooting-star {
+    position: fixed;
+
+    width: 100px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(210, 204, 255, 0.9),
+            transparent
+        );
+
+    transform: rotate(-35deg);
+
+    pointer-events: none;
+
+    z-index: 11;
+
+    opacity: 0;
+
+    animation: shootingStar 7s linear infinite;
+}
+
+
+@keyframes shootingStar {
+
+    0% {
+        transform:
+            translate(0, 0)
+            rotate(-35deg);
+
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 0.8;
+    }
+
+    20% {
+        transform:
+            translate(-250px, 250px)
+            rotate(-35deg);
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   🌙 FLOATING MOON
+   ========================================================= */
+
+.galaxy-moon {
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    right: 12%;
+    top: 14%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff,
+            #e5e1f5 45%,
+            #b9b3d4 100%
+        );
+
+    box-shadow:
+        0 0 15px rgba(240, 236, 255, 0.6),
+        0 0 45px rgba(174, 161, 255, 0.35),
+        0 0 90px rgba(121, 105, 235, 0.18);
+
+    z-index: 3;
+
+    animation: moonFloat 6s ease-in-out infinite;
+}
+
+
+/* Crescent cut */
+
+.galaxy-moon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 95px;
+    height: 95px;
+
+    border-radius: 50%;
+
+    background: #02030a;
+
+    top: -10px;
+    left: 25px;
+}
+
+
+@keyframes moonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =========================================================
+   📱 MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .galaxy-moon {
+        width: 65px;
+        height: 65px;
+
+        right: 10%;
+        top: 10%;
+    }
+
+    .galaxy-moon::after {
+        width: 65px;
+        height: 65px;
+
+        left: 17px;
+        top: -7px;
+    }
+
+    .love-card:hover {
+        transform: none;
+    }
+
+    #openButton:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   🌌 REDUCE MOTION FOR ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
