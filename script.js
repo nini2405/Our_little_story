@@ -112,62 +112,119 @@ function toggleSong() {
     }
 }
 // =========================================================
-// 🌌 GALAXY EFFECTS
+// 🌌 FINAL GALAXY EFFECTS
 // =========================================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ---------- CREATE STARS ----------
+    /* =====================================================
+       🌌 CREATE GALAXY BACKGROUND
+       ===================================================== */
 
-    const starCount = 90;
+    const galaxy = document.createElement("div");
+
+    galaxy.className = "galaxy-background";
+
+    document.body.prepend(galaxy);
+
+
+    /* =====================================================
+       ⭐ CREATE STARS
+       ===================================================== */
+
+    const starCount = 100;
 
     for (let i = 0; i < starCount; i++) {
 
         const star = document.createElement("div");
 
-        star.classList.add("galaxy-star");
+        star.className = "galaxy-star";
 
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.top = Math.random() * 100 + "vh";
+        star.style.left =
+            Math.random() * 100 + "%";
 
-        const size = Math.random() * 2 + 1;
+        star.style.top =
+            Math.random() * 100 + "%";
 
-        star.style.width = size + "px";
-        star.style.height = size + "px";
+        const size =
+            Math.random() * 2 + 0.6;
+
+        star.style.width =
+            size + "px";
+
+        star.style.height =
+            size + "px";
 
         star.style.animationDelay =
-            Math.random() * 4 + "s";
+            Math.random() * 5 + "s";
 
         star.style.animationDuration =
             Math.random() * 3 + 2 + "s";
 
-        document.body.appendChild(star);
+        galaxy.appendChild(star);
     }
 
 
-    // ---------- SHOOTING STARS ----------
+    /* =====================================================
+       ✦ CREATE SPARKLE STARS
+       ===================================================== */
+
+    const sparkleCount = 15;
+
+    for (let i = 0; i < sparkleCount; i++) {
+
+        const sparkle =
+            document.createElement("div");
+
+        sparkle.className =
+            "galaxy-sparkle";
+
+        sparkle.textContent = "✦";
+
+        sparkle.style.left =
+            Math.random() * 100 + "%";
+
+        sparkle.style.top =
+            Math.random() * 100 + "%";
+
+        sparkle.style.animationDelay =
+            Math.random() * 5 + "s";
+
+        sparkle.style.fontSize =
+            (Math.random() * 7 + 7) + "px";
+
+        galaxy.appendChild(sparkle);
+    }
+
+
+    /* =====================================================
+       ☄️ SHOOTING STARS
+       ===================================================== */
 
     for (let i = 0; i < 3; i++) {
 
         const shootingStar =
             document.createElement("div");
 
-        shootingStar.classList.add("shooting-star");
+        shootingStar.className =
+            "shooting-star";
+
+        shootingStar.style.left =
+            (60 + Math.random() * 35) + "%";
 
         shootingStar.style.top =
             Math.random() * 45 + "%";
 
-        shootingStar.style.left =
-            (50 + Math.random() * 45) + "%";
-
         shootingStar.style.animationDelay =
             (i * 4) + "s";
 
-        document.body.appendChild(shootingStar);
+        galaxy.appendChild(shootingStar);
     }
 
 
-    // ---------- MOON ----------
+    /* =====================================================
+       🌙 CREATE MOON
+       ===================================================== */
 
     const intro =
         document.querySelector(".intro");
@@ -177,9 +234,61 @@ document.addEventListener("DOMContentLoaded", function () {
         const moon =
             document.createElement("div");
 
-        moon.classList.add("galaxy-moon");
+        moon.className =
+            "galaxy-moon";
 
         intro.appendChild(moon);
     }
 
 });
+
+
+// =========================================================
+// 🎵 MUSIC PLAYING EFFECT
+// =========================================================
+
+const song =
+    document.getElementById("ourSong");
+
+const playButton =
+    document.getElementById("playButton");
+
+const songCard =
+    document.querySelector(".song-card");
+
+
+if (song && playButton) {
+
+    song.addEventListener("play", function () {
+
+        playButton.textContent = "⏸";
+
+        if (songCard) {
+            songCard.classList.add("is-playing");
+        }
+
+    });
+
+
+    song.addEventListener("pause", function () {
+
+        playButton.textContent = "▶";
+
+        if (songCard) {
+            songCard.classList.remove("is-playing");
+        }
+
+    });
+
+
+    song.addEventListener("ended", function () {
+
+        playButton.textContent = "▶";
+
+        if (songCard) {
+            songCard.classList.remove("is-playing");
+        }
+
+    });
+
+}

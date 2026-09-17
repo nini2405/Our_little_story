@@ -2271,3 +2271,678 @@ body::before {
         transition-duration: 0.01ms !important;
     }
 }
+/* =========================================================
+   🌌 FINAL GALAXY POLISH
+   ========================================================= */
+
+/* ---------- GALAXY BACKGROUND LAYER ---------- */
+
+.galaxy-background {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+
+/* ---------- MAKE CONTENT SIT ABOVE STARS ---------- */
+
+.intro,
+#mainContent {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* ---------- TRANSPARENT GALAXY SECTIONS ---------- */
+/* This allows the background stars to remain visible
+   without appearing directly inside photos/cards. */
+
+.intro {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(105, 85, 210, 0.18),
+            transparent 28%
+        ),
+        rgba(2, 3, 10, 0.94) !important;
+}
+
+.photo-section {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(105, 85, 210, 0.12),
+            transparent 35%
+        ),
+        rgba(3, 4, 13, 0.88) !important;
+}
+
+.message-section {
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(121, 98, 235, 0.13),
+            transparent 32%
+        ),
+        rgba(4, 5, 17, 0.88) !important;
+}
+
+.little-things {
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(115, 94, 220, 0.12),
+            transparent 35%
+        ),
+        rgba(2, 3, 11, 0.88) !important;
+}
+
+.open-when {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(111, 91, 215, 0.13),
+            transparent 35%
+        ),
+        rgba(3, 4, 13, 0.88) !important;
+}
+
+.song-section {
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(91, 80, 190, 0.15),
+            transparent 38%
+        ),
+        rgba(2, 3, 10, 0.88) !important;
+}
+
+.final-section {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(117, 98, 225, 0.18),
+            transparent 30%
+        ),
+        rgba(1, 2, 8, 0.92) !important;
+}
+
+
+/* =========================================================
+   ⭐ BACKGROUND STARS
+   ========================================================= */
+
+.galaxy-star {
+    position: absolute;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    pointer-events: none;
+
+    opacity: 0.25;
+
+    box-shadow:
+        0 0 5px rgba(255,255,255,0.45);
+
+    animation:
+        galaxyTwinkle 3s ease-in-out infinite;
+}
+
+
+@keyframes galaxyTwinkle {
+
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.85;
+        transform: scale(1.4);
+    }
+}
+
+
+/* =========================================================
+   ✦ EXTRA SPARKLE STARS
+   ========================================================= */
+
+.galaxy-sparkle {
+    position: absolute;
+
+    color: #d9d3ff;
+
+    font-size: 12px;
+
+    opacity: 0.5;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 8px rgba(158, 143, 255, 0.8);
+
+    animation:
+        sparklePulse 4s ease-in-out infinite;
+}
+
+
+@keyframes sparklePulse {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.7) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25) rotate(20deg);
+    }
+}
+
+
+/* =========================================================
+   ☄️ SHOOTING STARS
+   ========================================================= */
+
+.shooting-star {
+    position: absolute;
+
+    width: 110px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(220, 216, 255, 0.9),
+            transparent
+        );
+
+    transform: rotate(-35deg);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    animation:
+        shootingStar 8s linear infinite;
+}
+
+
+@keyframes shootingStar {
+
+    0% {
+        transform:
+            translate(0, 0)
+            rotate(-35deg);
+
+        opacity: 0;
+    }
+
+    4% {
+        opacity: 0.8;
+    }
+
+    15% {
+        transform:
+            translate(-280px, 280px)
+            rotate(-35deg);
+
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   🌙 CLEANER MOON
+   ========================================================= */
+
+.galaxy-moon {
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: 12%;
+    top: 14%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff 0%,
+            #eeeaff 45%,
+            #c4bddc 100%
+        );
+
+    box-shadow:
+        0 0 12px rgba(245, 242, 255, 0.8),
+        0 0 35px rgba(183, 169, 255, 0.45),
+        0 0 80px rgba(120, 100, 230, 0.2);
+
+    z-index: 3;
+
+    animation:
+        moonFloat 7s ease-in-out infinite;
+}
+
+
+/* Crescent shadow */
+
+.galaxy-moon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #02030a;
+
+    left: 27px;
+    top: -9px;
+}
+
+
+@keyframes moonFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+
+/* =========================================================
+   🖼️ PHOTO — KEEP STARS OUT OF IMAGE
+   ========================================================= */
+
+.polaroid {
+    position: relative;
+    z-index: 5;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.10),
+            rgba(255,255,255,0.035)
+        ) !important;
+
+    border: 1px solid rgba(190,181,255,0.35) !important;
+
+    box-shadow:
+        0 0 25px rgba(118,99,225,0.15),
+        0 20px 70px rgba(0,0,0,0.5) !important;
+}
+
+
+/* Photo itself */
+
+.polaroid img {
+    position: relative;
+    z-index: 6;
+}
+
+
+/* =========================================================
+   💜 MESSAGE — BETTER READING WIDTH
+   ========================================================= */
+
+.message-section p {
+    max-width: 850px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   ✨ LITTLE THINGS — FLOATING CARDS
+   ========================================================= */
+
+.love-grid {
+    position: relative;
+    z-index: 5;
+}
+
+
+.love-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(150,135,240,0.09),
+            rgba(255,255,255,0.035)
+        ) !important;
+
+    border: 1px solid rgba(180,165,255,0.23) !important;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.35),
+        inset 0 0 25px rgba(160,145,255,0.025);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease,
+        border-color 0.45s ease;
+}
+
+
+.love-card:nth-child(1) {
+    transform: rotate(-0.8deg);
+}
+
+.love-card:nth-child(2) {
+    transform: rotate(0.8deg);
+}
+
+.love-card:nth-child(3) {
+    transform: rotate(-0.6deg);
+}
+
+.love-card:nth-child(4) {
+    transform: rotate(0.7deg);
+}
+
+
+.love-card:hover {
+    transform:
+        translateY(-9px)
+        rotate(0deg);
+
+    border-color:
+        rgba(190,180,255,0.55) !important;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,0.45),
+        0 0 30px rgba(120,100,230,0.18);
+}
+
+
+/* =========================================================
+   💌 OPEN WHEN
+   ========================================================= */
+
+.letter-card {
+    position: relative;
+    z-index: 5;
+}
+
+
+.letter-front {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(150,135,240,0.11),
+            rgba(255,255,255,0.035)
+        ) !important;
+
+    border:
+        1px solid rgba(180,165,255,0.25) !important;
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.35),
+        inset 0 0 25px rgba(160,145,255,0.025);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+.letter-front:hover {
+    border-color:
+        rgba(195,185,255,0.65) !important;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,0.45),
+        0 0 35px rgba(130,110,240,0.22);
+}
+
+
+/* =========================================================
+   🎵 SONG CARD
+   ========================================================= */
+
+.song-card {
+    position: relative;
+    z-index: 5;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(150,135,240,0.09),
+            rgba(255,255,255,0.035)
+        ) !important;
+
+    border:
+        1px solid rgba(180,165,255,0.25) !important;
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        0 0 40px rgba(100,87,210,0.08);
+}
+
+
+/* Playing glow */
+
+.song-card.is-playing {
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.45),
+        0 0 35px rgba(135,115,245,0.25),
+        inset 0 0 35px rgba(135,115,245,0.04);
+}
+
+
+/* =========================================================
+   ▶️ MUSIC BUTTON
+   ========================================================= */
+
+#playButton {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(154,138,255,0.28),
+            rgba(82,70,170,0.10)
+        ) !important;
+
+    border:
+        1px solid rgba(191,179,255,0.45) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 0 15px rgba(133,115,245,0.3);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+#playButton:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 25px rgba(150,135,255,0.55),
+        0 0 60px rgba(98,82,210,0.2);
+}
+
+
+/* Button pulse only when playing */
+
+.song-card.is-playing #playButton {
+    animation:
+        musicPulse 1.8s ease-in-out infinite;
+}
+
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 15px rgba(140,120,245,0.3);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px rgba(160,145,255,0.65),
+            0 0 60px rgba(100,80,210,0.2);
+    }
+}
+
+
+/* =========================================================
+   🌙 FINAL SECTION
+   ========================================================= */
+
+.final-section {
+    overflow: hidden;
+}
+
+
+.final-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(120,100,230,0.12);
+
+    filter: blur(100px);
+
+    top: 20%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.final-section h2 {
+    position: relative;
+    z-index: 5;
+
+    font-size:
+        clamp(4rem, 9vw, 8rem) !important;
+
+    line-height: 0.95;
+
+    max-width: 900px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-shadow:
+        0 0 15px rgba(190,180,255,0.35),
+        0 0 45px rgba(116,99,225,0.2);
+}
+
+
+.final-section p,
+.final-section .signature {
+    position: relative;
+    z-index: 5;
+}
+
+
+/* =========================================================
+   📱 MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .galaxy-moon {
+        width: 65px;
+        height: 65px;
+
+        right: 8%;
+        top: 9%;
+    }
+
+    .galaxy-moon::after {
+        width: 65px;
+        height: 65px;
+
+        left: 19px;
+        top: -7px;
+    }
+
+    .love-card:nth-child(1),
+    .love-card:nth-child(2),
+    .love-card:nth-child(3),
+    .love-card:nth-child(4) {
+        transform: none;
+    }
+
+    .love-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .message-section p {
+        max-width: 92%;
+    }
+
+    .final-section h2 {
+        font-size:
+            clamp(3rem, 15vw, 5rem) !important;
+    }
+}
+
+
+/* =========================================================
+   ♿ REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .galaxy-star,
+    .galaxy-sparkle,
+    .shooting-star,
+    .galaxy-moon,
+    .song-card.is-playing #playButton {
+        animation: none !important;
+    }
+}
