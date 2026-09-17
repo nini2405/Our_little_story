@@ -59,6 +59,30 @@ if (openButton) {
     });
 
 }
+// =========================================================
+// GALAXY LOADING SCREEN
+// =========================================================
+
+window.addEventListener("load", function () {
+
+    const loadingScreen =
+        document.getElementById("loadingScreen");
+
+    if (!loadingScreen) {
+        return;
+    }
+
+    setTimeout(function () {
+
+        loadingScreen.classList.add("hide");
+
+        setTimeout(function () {
+            loadingScreen.remove();
+        }, 1300);
+
+    }, 2800);
+
+});
 
 
 // =========================================================
