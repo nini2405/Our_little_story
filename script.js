@@ -1,66 +1,10 @@
 // =========================================================
-// 🌌 OUR LITTLE STORY — GALAXY JAVASCRIPT
+// OUR LITTLE STORY — MAIN JAVASCRIPT
 // =========================================================
 
 
 // =========================================================
-// 💜 OPEN WEBSITE BUTTON
-// =========================================================
-
-const openButton = document.getElementById("openButton");
-const intro = document.querySelector(".intro");
-const mainContent = document.getElementById("mainContent");
-
-
-if (openButton) {
-
-    openButton.addEventListener("click", function () {
-
-        // Fade out intro
-        if (intro) {
-
-            intro.style.transition =
-                "opacity 1.2s ease, transform 1.2s ease";
-
-            intro.style.opacity = "0";
-
-            intro.style.transform = "scale(1.03)";
-        }
-
-
-        // Show main website
-        setTimeout(function () {
-
-            if (intro) {
-                intro.style.display = "none";
-            }
-
-            if (mainContent) {
-
-                mainContent.style.display = "block";
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "instant"
-                });
-            }
-
-
-            // Show memory section
-            const memory =
-                document.querySelector(".memory-wrapper");
-
-            if (memory) {
-                memory.classList.add("show");
-            }
-
-        }, 1200);
-
-    });
-
-}
-// =========================================================
-// GALAXY LOADING SCREEN
+// LOADING SCREEN
 // =========================================================
 
 window.addEventListener("load", function () {
@@ -68,16 +12,16 @@ window.addEventListener("load", function () {
     const loadingScreen =
         document.getElementById("loadingScreen");
 
-    if (!loadingScreen) {
-        return;
-    }
+    if (!loadingScreen) return;
 
     setTimeout(function () {
 
         loadingScreen.classList.add("hide");
 
         setTimeout(function () {
+
             loadingScreen.remove();
+
         }, 1300);
 
     }, 2800);
@@ -86,12 +30,83 @@ window.addEventListener("load", function () {
 
 
 // =========================================================
-// ⭐ CREATE GALAXY
+// OPEN FIRST PAGE
+// =========================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const openButton =
+        document.getElementById("openButton");
+
+    const intro =
+        document.querySelector(".intro");
+
+    const mainContent =
+        document.getElementById("mainContent");
+
+
+    if (openButton) {
+
+        openButton.addEventListener("click", function () {
+
+            if (!intro || !mainContent) return;
+
+
+            // Fade first page
+
+            intro.style.transition =
+                "opacity 1s ease, transform 1s ease";
+
+            intro.style.opacity = "0";
+
+            intro.style.transform =
+                "scale(1.03)";
+
+
+            // Show website
+
+            setTimeout(function () {
+
+                intro.style.display = "none";
+
+                mainContent.style.display = "block";
+
+                window.scrollTo(0, 0);
+
+
+                // Show first memory
+
+                const memory =
+                    document.querySelector(".memory-wrapper");
+
+                if (memory) {
+                    memory.classList.add("show");
+                }
+
+            }, 1000);
+
+        });
+
+    }
+
+
+    // =====================================================
+    // CREATE GALAXY
+    // =====================================================
+
+    createGalaxy();
+
+    createCursorGlow();
+
+});
+
+
+// =========================================================
+// GALAXY
 // =========================================================
 
 function createGalaxy() {
 
-    // Main star container
     const starContainer =
         document.createElement("div");
 
@@ -101,7 +116,6 @@ function createGalaxy() {
     document.body.appendChild(starContainer);
 
 
-    // Create 180 stars
     for (let i = 0; i < 180; i++) {
 
         const star =
@@ -110,64 +124,41 @@ function createGalaxy() {
         star.className =
             "galaxy-star";
 
-
-        const size =
-            (Math.random() * 2.5 + 0.7).toFixed(2);
-
-        const x =
-            Math.random() * 100;
-
-        const y =
-            Math.random() * 100;
-
-        const opacity =
-            (Math.random() * 0.65 + 0.2).toFixed(2);
-
-        const duration =
-            (Math.random() * 4 + 2).toFixed(2);
-
-        const delay =
-            (Math.random() * 5).toFixed(2);
-
-
         star.style.setProperty(
             "--size",
-            size + "px"
+            (Math.random() * 2.5 + 0.7) + "px"
         );
 
         star.style.setProperty(
             "--x",
-            x + "%"
+            Math.random() * 100 + "%"
         );
 
         star.style.setProperty(
             "--y",
-            y + "%"
+            Math.random() * 100 + "%"
         );
 
         star.style.setProperty(
             "--opacity",
-            opacity
+            Math.random() * 0.65 + 0.2
         );
 
         star.style.setProperty(
             "--duration",
-            duration + "s"
+            Math.random() * 4 + 2 + "s"
         );
 
         star.style.setProperty(
             "--delay",
-            delay + "s"
+            Math.random() * 5 + "s"
         );
-
 
         starContainer.appendChild(star);
     }
 
 
-    // =====================================================
-    // 🌌 NEBULA
-    // =====================================================
+    // Nebula
 
     const nebulaOne =
         document.createElement("div");
@@ -187,9 +178,7 @@ function createGalaxy() {
     document.body.appendChild(nebulaTwo);
 
 
-    // =====================================================
-    // 🌙 MOON
-    // =====================================================
+    // Moon
 
     const moon =
         document.createElement("div");
@@ -200,9 +189,7 @@ function createGalaxy() {
     document.body.appendChild(moon);
 
 
-    // =====================================================
-    // ☄️ SHOOTING STARS
-    // =====================================================
+    // Shooting stars
 
     for (let i = 0; i < 3; i++) {
 
@@ -213,92 +200,19 @@ function createGalaxy() {
             "shooting-star";
 
         document.body.appendChild(shootingStar);
+
     }
 
 }
 
 
 // =========================================================
-// 💫 FLOATING HEARTS
-// =========================================================
-
-function createFloatingHeart() {
-
-    const heart =
-        document.createElement("div");
-
-    heart.className =
-        "floating-heart";
-
-    heart.textContent =
-        Math.random() > 0.5 ? "♡" : "✦";
-
-
-    const size =
-        Math.random() * 12 + 10;
-
-    const duration =
-        Math.random() * 8 + 8;
-
-    const drift =
-        Math.random() * 100 - 50;
-
-
-    heart.style.left =
-        Math.random() * 100 + "%";
-
-
-    heart.style.setProperty(
-        "--heart-size",
-        size + "px"
-    );
-
-
-    heart.style.setProperty(
-        "--heart-duration",
-        duration + "s"
-    );
-
-
-    heart.style.setProperty(
-        "--heart-drift",
-        drift + "px"
-    );
-
-
-    document.body.appendChild(heart);
-
-
-    setTimeout(function () {
-
-        heart.remove();
-
-    }, duration * 1000);
-
-}
-
-
-// Create hearts occasionally
-setInterval(function () {
-
-    // Don't overdo it
-    if (document.hidden) return;
-
-    createFloatingHeart();
-
-}, 4500);
-
-
-// =========================================================
-// 🖱️ CURSOR GLOW
+// CURSOR GLOW
 // =========================================================
 
 function createCursorGlow() {
 
-    // Don't create on mobile
-    if (window.innerWidth <= 700) {
-        return;
-    }
+    if (window.innerWidth <= 700) return;
 
 
     const glow =
@@ -310,8 +224,12 @@ function createCursorGlow() {
     document.body.appendChild(glow);
 
 
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
+    let mouseX =
+        window.innerWidth / 2;
+
+    let mouseY =
+        window.innerHeight / 2;
+
 
     let currentX = mouseX;
     let currentY = mouseY;
@@ -321,14 +239,17 @@ function createCursorGlow() {
         "mousemove",
         function (event) {
 
-            mouseX = event.clientX;
-            mouseY = event.clientY;
+            mouseX =
+                event.clientX;
+
+            mouseY =
+                event.clientY;
 
         }
     );
 
 
-    function animateCursor() {
+    function animate() {
 
         currentX +=
             (mouseX - currentX) * 0.08;
@@ -344,19 +265,18 @@ function createCursorGlow() {
             currentY + "px";
 
 
-        requestAnimationFrame(
-            animateCursor
-        );
+        requestAnimationFrame(animate);
+
     }
 
 
-    animateCursor();
+    animate();
 
 }
 
 
 // =========================================================
-// 💌 OPEN WHEN LETTERS
+// OPEN WHEN LETTERS
 // =========================================================
 
 function openLetter(card) {
@@ -369,58 +289,69 @@ function openLetter(card) {
 
 
 // =========================================================
-// ✨ LOVE CARDS ANIMATION
+// LOVE CARDS
 // =========================================================
 
-const loveCards =
-    document.querySelectorAll(".love-card");
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const loveCards =
+            document.querySelectorAll(".love-card");
+
+        const littleThingsSection =
+            document.querySelector(".little-things");
 
 
-const cardObserver =
-    new IntersectionObserver(
+        if (!littleThingsSection) return;
 
-        function (entries) {
 
-            entries.forEach(function (entry) {
+        const observer =
+            new IntersectionObserver(
 
-                if (entry.isIntersecting) {
+                function (entries) {
 
-                    loveCards.forEach(
-                        function (card) {
+                    entries.forEach(
+                        function (entry) {
 
-                            card.classList.add("show");
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                loveCards.forEach(
+                                    function (card) {
+
+                                        card.classList.add(
+                                            "show"
+                                        );
+
+                                    }
+                                );
+
+                            }
 
                         }
                     );
 
+                },
+
+                {
+                    threshold: 0.2
                 }
 
-            });
-
-        },
-
-        {
-            threshold: 0.2
-        }
-
-    );
+            );
 
 
-const littleThingsSection =
-    document.querySelector(".little-things");
+        observer.observe(
+            littleThingsSection
+        );
 
-
-if (littleThingsSection) {
-
-    cardObserver.observe(
-        littleThingsSection
-    );
-
-}
+    }
+);
 
 
 // =========================================================
-// 🎵 SONG PLAYER
+// SONG
 // =========================================================
 
 function toggleSong() {
@@ -432,15 +363,12 @@ function toggleSong() {
         document.getElementById("playButton");
 
 
-    if (!song || !button) {
-        return;
-    }
+    if (!song || !button) return;
 
 
     if (song.paused) {
 
         song.play()
-
             .then(function () {
 
                 button.textContent = "⏸";
@@ -450,18 +378,15 @@ function toggleSong() {
                 );
 
             })
-
             .catch(function () {
 
                 alert(
-                    "The song could not be played. Please check the audio file."
+                    "Please check Munbe-vaa.mp3 is inside the project folder."
                 );
 
             });
 
-    }
-
-    else {
+    } else {
 
         song.pause();
 
@@ -477,48 +402,40 @@ function toggleSong() {
 
 
 // =========================================================
-// 🎵 RESET BUTTON WHEN SONG ENDS
-// =========================================================
-
-const ourSong =
-    document.getElementById("ourSong");
-
-
-if (ourSong) {
-
-    ourSong.addEventListener(
-        "ended",
-        function () {
-
-            const button =
-                document.getElementById("playButton");
-
-            if (button) {
-
-                button.textContent = "▶";
-
-                button.classList.remove(
-                    "playing"
-                );
-            }
-
-        }
-    );
-
-}
-
-
-// =========================================================
-// 🌌 START GALAXY
+// SONG END
 // =========================================================
 
 document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-        createGalaxy();
+        const song =
+            document.getElementById("ourSong");
 
-        createCursorGlow();
+        if (!song) return;
+
+
+        song.addEventListener(
+            "ended",
+            function () {
+
+                const button =
+                    document.getElementById(
+                        "playButton"
+                    );
+
+                if (button) {
+
+                    button.textContent = "▶";
+
+                    button.classList.remove(
+                        "playing"
+                    );
+
+                }
+
+            }
+        );
 
     }
 );
