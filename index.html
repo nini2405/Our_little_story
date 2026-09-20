@@ -20,25 +20,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
+
+    <!-- ===================================== -->
     <!-- LOADING SCREEN -->
-<div id="loadingScreen">
+    <!-- ===================================== -->
 
-    <div class="loading-heart">
-        ♥
+    <div id="loadingScreen">
+
+        <div class="loading-heart">♥</div>
+
+        <p class="loading-text">
+            loading our little story
+        </p>
+
+        <div class="loading-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
     </div>
 
-    <p class="loading-text">
-        loading our little story
-    </p>
-
-    <div class="loading-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-
-</div>
 
     <!-- ===================================== -->
     <!-- INTRO / OPENING SCREEN -->
@@ -62,8 +66,7 @@
                 I've ever made.
             </p>
 
-            <!-- IMPORTANT: ID USED BY JAVASCRIPT -->
-            <button id="openButton">
+            <button id="openButton" type="button">
                 open ♡
             </button>
 
@@ -95,7 +98,6 @@
 
             <div class="memory-wrapper">
 
-                <!-- PHOTO -->
                 <div class="photo-container">
 
                     <div class="photo-frame">
@@ -114,7 +116,6 @@
                 </div>
 
 
-                <!-- MEMORY TEXT -->
                 <div class="memory-note">
 
                     <p class="handwritten">
@@ -158,20 +159,23 @@
                 <div class="message-line"></div>
 
                 <p class="message-text">
+
                     It's not just one big reason.
+
                     <br><br>
 
                     there are so many reasons...
                     first of all i really love the way you are....day by day unmela respect increase aaguthu..
                     nee mathavnga madri ila sree...you're different from others..
-                    the way you talk,the way you care, the way you love, the way you are.. ellamey romba pudikum. 
+                    the way you talk,the way you care, the way you love, the way you are.. ellamey romba pudikum.
                     naa evolo low ah feel pannalum yenna better ah feel panna vekkure..tbh i really feel better when i'm with you...
                     i'm really lucky to have you in my life...
-                    naa onnu confirm ah solluven...all my love, care and everything is only for you da... 
+                    naa onnu confirm ah solluven...all my love, care and everything is only for you da...
 
                     <br><br>
 
                     It's the little things that make me love you more and more every day.
+
                 </p>
 
             </div>
@@ -219,7 +223,7 @@
                     </h3>
 
                     <p>
-                        i really feel okay when i see you smile da... 
+                        i really feel okay when i see you smile da...
                         even that makes my day better...just keep smiling da...
                     </p>
 
@@ -241,7 +245,7 @@
                     <p>
                         even there is no topic to talk about...pesnanum nu mathum tha thonum..i really don't wanted to end our convo...
                         evolo pain irundhalum if i speak with you athu ellamey maranju poidum...
-                        whenever i'm free namma chat eh thaan read pannitu irupen...every single texts are really precious to me and are my favourite <3
+                        whenever i'm free namma chat eh thaan read pannitu irupen...every single texts are really precious to me and are my favourite &lt;3
                     </p>
 
                 </div>
@@ -280,7 +284,7 @@
                     </h3>
 
                     <p>
-                        there is no any other reason...but i really, really love you! just you da... 
+                        there is no any other reason...but i really, really love you! just you da...
                         nee mathum irundha podhum...
                     </p>
 
@@ -300,7 +304,6 @@
             <p class="section-number">
                 04 / 06
             </p>
-
 
             <div class="open-heading">
 
@@ -323,6 +326,8 @@
                 <div
                     class="letter-card"
                     onclick="openLetter(this)"
+                    role="button"
+                    tabindex="0"
                 >
 
                     <div class="letter-front">
@@ -336,7 +341,7 @@
                         </h3>
 
                         <p>
-                            click to open
+                            tap to open
                         </p>
 
                     </div>
@@ -346,7 +351,7 @@
 
                         <p>
                             Even when we're not together,
-                            remember that naa eppovume unkuda tha iruken... 
+                            remember that naa eppovume unkuda tha iruken...
                             ♡
                         </p>
 
@@ -364,6 +369,8 @@
                 <div
                     class="letter-card"
                     onclick="openLetter(this)"
+                    role="button"
+                    tabindex="0"
                 >
 
                     <div class="letter-front">
@@ -377,7 +384,7 @@
                         </h3>
 
                         <p>
-                            click to open
+                            tap to open
                         </p>
 
                     </div>
@@ -405,6 +412,8 @@
                 <div
                     class="letter-card"
                     onclick="openLetter(this)"
+                    role="button"
+                    tabindex="0"
                 >
 
                     <div class="letter-front">
@@ -418,7 +427,7 @@
                         </h3>
 
                         <p>
-                            click to open
+                            tap to open
                         </p>
 
                     </div>
@@ -426,12 +435,10 @@
 
                     <div class="letter-back">
 
-                        <p> 
-                           
+                        <p>
                             I hope this little note brings a smile to your face.
                             remember that you are loved and appreciated.
                             ☾
-                            
                         </p>
 
                         <span>
@@ -448,6 +455,8 @@
                 <div
                     class="letter-card"
                     onclick="openLetter(this)"
+                    role="button"
+                    tabindex="0"
                 >
 
                     <div class="letter-front">
@@ -461,7 +470,7 @@
                         </h3>
 
                         <p>
-                            click to open
+                            tap to open
                         </p>
 
                     </div>
@@ -491,89 +500,99 @@
 
 
         <!-- ===================================== -->
-<!-- SECTION 05 - OUR SONG -->
-<!-- ===================================== -->
+        <!-- SECTION 05 - OUR SONG -->
+        <!-- ===================================== -->
 
-<section class="song-section">
+        <section class="song-section">
 
-    <p class="section-number">
-        05 / 06
-    </p>
-
-    <div class="song-heading">
-
-        <p class="handwritten">
-            some songs just feel different...
-        </p>
-
-        <h2>
-            A song<br>
-            that reminds me of us.
-        </h2>
-
-    </div>
-
-
-    <div class="song-card">
-
-        <!-- SONG IMAGE -->
-        <div class="song-image">
-
-            <img
-                src="images/song.jpeg"
-                alt="Our song"
-            >
-
-        </div>
-
-
-        <!-- SONG DETAILS -->
-        <div class="song-info">
-
-            <p class="song-label">
-                ♡ OUR SONG ♡
+            <p class="section-number">
+                05 / 06
             </p>
 
-            <h3>
-                Munbe Vaa
-            </h3>
+            <div class="song-heading">
 
-            <p class="song-movie">
-                Sillunu Oru Kadhal
-            </p>
+                <p class="handwritten">
+                    some songs just feel different...
+                </p>
 
-            <div class="song-line"></div>
+                <h2>
+                    A song<br>
+                    that reminds me of us.
+                </h2>
 
-            <p class="song-note">
-                Some songs are just songs...
-                <br>
-                but this one feels like us. ♡
-            </p>
+            </div>
 
 
-            <!-- PLAY BUTTON -->
+            <div class="song-card">
 
-            <button
-                class="play-button"
-                onclick="toggleSong()"
-                id="playButton"
-            >
-                ▶
-            </button>
+                <!-- SONG IMAGE -->
+
+                <div class="song-image">
+
+                    <img
+                        src="images/song.jpeg"
+                        alt="Our song"
+                    >
+
+                </div>
 
 
-            <!-- AUDIO -->
+                <!-- SONG DETAILS -->
 
-            <audio id="ourSong" controls>
-    <source src="Munbe-vaa.mp3" type="audio/mpeg">
-    Your browser does not support audio.
-</audio>
+                <div class="song-info">
 
-        </div>
+                    <p class="song-label">
+                        ♡ OUR SONG ♡
+                    </p>
 
-    </div>
+                    <h3>
+                        Munbe Vaa
+                    </h3>
 
-</section>
+                    <p class="song-movie">
+                        Sillunu Oru Kadhal
+                    </p>
+
+                    <div class="song-line"></div>
+
+                    <p class="song-note">
+                        Some songs are just songs...
+                        <br>
+                        but this one feels like us. ♡
+                    </p>
+
+
+                    <!-- PLAY BUTTON -->
+
+                    <button
+                        class="play-button"
+                        onclick="toggleSong()"
+                        id="playButton"
+                        type="button"
+                    >
+                        ▶
+                    </button>
+
+
+                    <!-- AUDIO -->
+
+                    <audio id="ourSong" controls preload="metadata">
+
+                        <source
+                            src="Munbe-vaa.mp3"
+                            type="audio/mpeg"
+                        >
+
+                        Your browser does not support audio.
+
+                    </audio>
+
+                </div>
+
+            </div>
+
+        </section>
+
 
         <!-- ===================================== -->
         <!-- SECTION 06 - FINAL MESSAGE -->
@@ -602,11 +621,17 @@
                 <p class="final-message">
 
                     i just wanna say something...maybe this small website will never full fill my feelings for you...but i just tried to express my feelings for you in a diffrent way...
-                    ipdi yaaravudu pannirupaangala nu thrla..namma onna pics kuda edukula...enkita namma childhood pic tha irundhuchu athuvum olunga clear ah ila oru pic eh vechu epdiyo manage panniten....konjam konjam cringe ah irukum...adjust panniko... 
+                    ipdi yaaravudu pannirupaangala nu thrla..namma onna pics kuda edukula...enkita namma childhood pic tha irundhuchu athuvum olunga clear ah ila oru pic eh vechu epdiyo manage panniten....konjam konjam cringe ah irukum...adjust panniko...
+
                     so...i really love you so much da...i really wanna spend my rest of my life with you..
+
                     <br><br>
-                     But I hope this little website reminds you of how much I love you, and how much you mean to me.
-               </p>
+
+                    But I hope this little website reminds you of how much I love you, and how much you mean to me.
+
+                </p>
+
+
                 <p class="handwritten final-signature">
                     always and forever, ♡
                 </p>
@@ -614,6 +639,8 @@
             </div>
 
         </section>
+
+
     </main>
 
 

@@ -20,7 +20,9 @@ window.addEventListener("load", function () {
 
         setTimeout(function () {
 
-            loadingScreen.remove();
+            if (loadingScreen) {
+                loadingScreen.remove();
+            }
 
         }, 1300);
 
@@ -52,8 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!intro || !mainContent) return;
 
 
-            // Fade first page
-
             intro.style.transition =
                 "opacity 1s ease, transform 1s ease";
 
@@ -63,18 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 "scale(1.03)";
 
 
-            // Show website
-
             setTimeout(function () {
 
                 intro.style.display = "none";
 
                 mainContent.style.display = "block";
 
-                window.scrollTo(0, 0);
+                window.scrollTo({
+                    top: 0,
+                    behavior: "auto"
+                });
 
-
-                // Show first memory
 
                 const memory =
                     document.querySelector(".memory-wrapper");
@@ -89,10 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    // =====================================================
-    // CREATE GALAXY
-    // =====================================================
 
     createGalaxy();
 
@@ -146,7 +141,7 @@ function createGalaxy() {
 
         star.style.setProperty(
             "--duration",
-            Math.random() * 4 + 2 + "s"
+            (Math.random() * 4 + 2) + "s"
         );
 
         star.style.setProperty(
@@ -157,8 +152,6 @@ function createGalaxy() {
         starContainer.appendChild(star);
     }
 
-
-    // Nebula
 
     const nebulaOne =
         document.createElement("div");
@@ -178,8 +171,6 @@ function createGalaxy() {
     document.body.appendChild(nebulaTwo);
 
 
-    // Moon
-
     const moon =
         document.createElement("div");
 
@@ -188,8 +179,6 @@ function createGalaxy() {
 
     document.body.appendChild(moon);
 
-
-    // Shooting stars
 
     for (let i = 0; i < 3; i++) {
 
@@ -229,7 +218,6 @@ function createCursorGlow() {
 
     let mouseY =
         window.innerHeight / 2;
-
 
     let currentX = mouseX;
     let currentY = mouseY;
