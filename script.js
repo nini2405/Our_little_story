@@ -534,8 +534,8 @@ document.addEventListener("DOMContentLoaded", function () {
         ".message-section": "just a tiny reminder: i love you. ♡",
         ".little-things": "you make ordinary days feel special.",
         ".open-when": "psst... you're my favourite person.",
-        ".song-section": "somehow, it's always you.",
-        ".words-section": "you make ordinary days feel special.",
+        ".song-section": "this song will always remind me of you. ♡",
+        ".words-section": "ten little words, but a whole lot of us. ♡",
         ".final-section": "if you're smiling right now, mission accomplished. ♡"
     };
 
