@@ -522,3 +522,58 @@ document.addEventListener(
 
     }
 );
+// TINY THOUGHT — PAGE RELATED
+document.addEventListener("DOMContentLoaded", function () {
+    const thought = document.getElementById("tinyThought");
+    const thoughtText = document.getElementById("thoughtText");
+
+    if (!thought || !thoughtText) return;
+
+    const pageThoughts = {
+        ".photo-section": "somehow, it's always you.",
+        ".message-section": "just a tiny reminder: i love you. ♡",
+        ".little-things": "you make ordinary days feel special.",
+        ".open-when": "psst... you're my favourite person.",
+        ".song-section": "somehow, it's always you.",
+        ".words-section": "you make ordinary days feel special.",
+        ".final-section": "if you're smiling right now, mission accomplished. ♡"
+    };
+
+    const sections = Object.keys(pageThoughts);
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+                const section = entry.target;
+                const message = pageThoughts["." + section.className.split(" ")[0]];
+
+                if (!message) return;
+
+                thoughtText.textContent = message;
+
+                // show
+                thought.classList.remove("show");
+
+                setTimeout(function () {
+                    thought.classList.add("show");
+                }, 150);
+
+                // hide after 4 seconds
+                setTimeout(function () {
+                    thought.classList.remove("show");
+                }, 4500);
+            }
+
+        });
+    }, {
+        threshold: 0.35
+    });
+
+    sections.forEach(function (selector) {
+        const section = document.querySelector(selector);
+        if (section) {
+            observer.observe(section);
+        }
+    });
+});
