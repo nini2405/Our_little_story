@@ -4099,3 +4099,132 @@ body {
     }
 
 }
+.words-section {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(145, 90, 140, 0.12),
+            transparent 45%
+        ),
+        #05030a;
+}
+
+.words-heading .handwritten {
+    font-family: "Caveat", cursive;
+    color: #c9a7b5;
+    font-size: 24px;
+}
+
+.words-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: #f5edf1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 0 0 30px rgba(210, 150, 190, 0.18);
+}
+
+.word-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(210, 160, 190, 0.14);
+    backdrop-filter: blur(8px);
+}
+
+.word-card span {
+    color: #806779;
+    letter-spacing: 3px;
+}
+
+.word-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: #dcb1c2;
+    font-size: 34px;
+    font-weight: 500;
+}
+
+.word-card p {
+    font-family: "Inter", sans-serif;
+    color: #a99ca5;
+}
+
+.word-card:hover {
+    border-color: rgba(220, 170, 200, 0.38);
+    background: rgba(180, 100, 150, 0.045);
+    box-shadow: 0 0 30px rgba(180, 100, 150, 0.08);
+}
+/* ========================================= */
+/* AESTHETIC FONT + COLOUR — US IN 10 WORDS */
+/* ========================================= */
+
+.words-section {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(145, 90, 140, 0.12),
+            transparent 45%
+        ),
+        #05030a;
+}
+
+/* Small handwritten heading */
+.words-heading .handwritten {
+    font-family: "Caveat", cursive;
+    color: #c9a7b5;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Main heading */
+.words-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: #f5edf1;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 0 0 30px rgba(210, 150, 190, 0.18);
+}
+
+/* Word cards */
+.word-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(210, 160, 190, 0.14);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Number */
+.word-card span {
+    font-family: "Inter", sans-serif;
+    color: #806779;
+    letter-spacing: 3px;
+    font-size: 11px;
+}
+
+/* Main word */
+.word-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: #dcb1c2;
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Description */
+.word-card p {
+    font-family: "Inter", sans-serif;
+    color: #a99ca5;
+    line-height: 1.7;
+}
+
+/* Hover */
+.word-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(220, 170, 200, 0.38);
+    background: rgba(180, 100, 150, 0.045);
+    box-shadow: 0 0 30px rgba(180, 100, 150, 0.08);
+}
