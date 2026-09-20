@@ -4895,7 +4895,7 @@ h3 {
     color: rgba(190, 150, 200, 0.18) !important;
 
     text-shadow:
-        0 0 12px rgba(170, 125, 185, 0.18) !important;
+        0 0 12px rgba(139, 96, 153, 0.18) !important;
 }
 
 
@@ -4906,4 +4906,187 @@ h3 {
 ::selection {
     background: rgba(105, 75, 125, 0.55) !important;
     color: #f5edf5 !important;
+}
+/* =========================================================
+   YOU PROBABLY DON'T KNOW THIS
+   ========================================================= */
+
+.secret-things {
+    min-height: 100vh;
+    padding: 120px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(100, 70, 125, 0.10),
+            transparent 50%
+        ),
+        #05030b;
+}
+
+
+/* ---------- HEADING ---------- */
+
+.secret-heading {
+    max-width: 800px;
+    margin-bottom: 65px;
+}
+
+.secret-heading .handwritten {
+    font-family: "Caveat", cursive;
+    color: #b99dbd;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.secret-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+    color: #eee8f0;
+
+    font-size: clamp(48px, 7vw, 82px);
+    font-weight: 400;
+    line-height: 0.95;
+
+    text-shadow:
+        0 0 30px rgba(175, 140, 180, 0.14);
+}
+
+.secret-subtitle {
+    margin-top: 22px;
+
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #75627c;
+}
+
+
+/* ---------- CARDS ---------- */
+
+.secret-grid {
+    width: 100%;
+    max-width: 1050px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.secret-card {
+    min-height: 210px;
+
+    padding: 32px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(18, 15, 24, 0.68);
+
+    border: 1px solid rgba(155, 130, 165, 0.15);
+
+    backdrop-filter: blur(6px);
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        background 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+/* NUMBER */
+
+.secret-number {
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    color: #75627c;
+
+    margin-bottom: 18px;
+}
+
+
+/* CARD TITLE */
+
+.secret-card h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+    font-weight: 500;
+
+    color: #d8b9d0;
+
+    margin-bottom: 14px;
+}
+
+
+/* CARD TEXT */
+
+.secret-card p {
+    max-width: 250px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    color: #aaa1ad;
+}
+
+
+/* HOVER */
+
+.secret-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(190, 155, 195, 0.32);
+
+    background: rgba(25, 20, 32, 0.78);
+
+    box-shadow:
+        0 0 30px rgba(110, 80, 130, 0.10);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 900px) {
+
+    .secret-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .secret-things {
+        padding: 90px 6%;
+    }
+
+    .secret-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .secret-card {
+        min-height: 180px;
+    }
+
 }
