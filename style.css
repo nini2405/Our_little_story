@@ -4232,3 +4232,678 @@ body {
 .section-number {
     display: none !important;
 }
+/* =========================================================
+   DREAMY NIGHT SKY THEME
+   Same aesthetic as "US IN 10 WORDS"
+   ========================================================= */
+
+/* ---------- MAIN BACKGROUND ---------- */
+
+body {
+    background: #05030b;
+    color: #eee8f0;
+}
+
+
+/* ---------- ALL SECTIONS ---------- */
+
+.photo-section,
+.message-section,
+.little-things,
+.open-when,
+.song-section,
+.words-section,
+.final-section {
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(100, 70, 125, 0.10),
+            transparent 50%
+        ),
+        #05030b;
+}
+
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    color: #eee8f0;
+}
+
+.handwritten {
+    color: #b99dbd;
+}
+
+
+/* =========================================================
+   REMOVE SECTION NUMBERS
+   ========================================================= */
+
+.section-number {
+    display: none !important;
+}
+
+
+/* =========================================================
+   LITTLE THINGS
+   ========================================================= */
+
+.love-card {
+    background: rgba(18, 15, 24, 0.72);
+    border: 1px solid rgba(155, 130, 165, 0.16);
+
+    box-shadow:
+        0 0 25px rgba(80, 55, 100, 0.05);
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.love-card:hover {
+    border-color: rgba(190, 155, 195, 0.32);
+
+    box-shadow:
+        0 0 30px rgba(110, 80, 130, 0.10);
+}
+
+.love-card h3 {
+    color: #d8b9d0;
+}
+
+.love-card p {
+    color: #aaa1ad;
+}
+
+.card-number {
+    color: #75627c;
+}
+
+
+/* =========================================================
+   OPEN WHEN
+   ========================================================= */
+
+.letter-card {
+    border: 1px solid rgba(155, 130, 165, 0.18);
+
+    box-shadow:
+        0 0 25px rgba(70, 50, 90, 0.06);
+}
+
+
+/* FRONT */
+
+.letter-front {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(13, 10, 18, 0.96),
+            rgba(25, 20, 31, 0.94)
+        );
+}
+
+.letter-front h3 {
+    color: #eee7ef;
+}
+
+.letter-front p {
+    color: #918795;
+}
+
+.letter-icon {
+    color: #d29bc0;
+}
+
+
+/* BACK */
+
+.letter-back {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(42, 29, 48, 0.98),
+            rgba(27, 20, 33, 0.98)
+        );
+}
+
+.letter-back p {
+    color: #ddd0dc;
+}
+
+.letter-back span {
+    color: #c99bbd;
+}
+
+
+/* =========================================================
+   SONG SECTION
+   ========================================================= */
+
+.song-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(12, 9, 17, 0.96),
+            rgba(29, 22, 35, 0.94)
+        );
+
+    border: 1px solid rgba(155, 130, 165, 0.17);
+
+    box-shadow:
+        0 0 35px rgba(80, 55, 100, 0.07);
+}
+
+.song-label {
+    color: #a989a9;
+}
+
+.song-info h3 {
+    color: #e8dce8;
+}
+
+.song-movie {
+    color: #918492;
+}
+
+.song-note {
+    color: #aaa0ad;
+}
+
+.song-line {
+    background: rgba(165, 135, 170, 0.25);
+}
+
+
+/* PLAY BUTTON */
+
+.play-button {
+    background:
+        rgba(35, 25, 42, 0.95);
+
+    border: 1px solid rgba(185, 150, 190, 0.28);
+
+    color: #d7b3cf;
+
+    box-shadow:
+        0 0 20px rgba(100, 70, 120, 0.08);
+}
+
+.play-button:hover {
+    background:
+        rgba(50, 35, 58, 0.98);
+
+    border-color: rgba(205, 170, 205, 0.42);
+
+    box-shadow:
+        0 0 28px rgba(120, 85, 135, 0.12);
+}
+
+
+/* =========================================================
+   US IN 10 WORDS
+   ========================================================= */
+
+.words-section {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(100, 70, 125, 0.11),
+            transparent 48%
+        ),
+        #05030b;
+}
+
+.words-heading .handwritten {
+    color: #b99dbd;
+}
+
+.words-heading h2 {
+    color: #eee8f0;
+
+    text-shadow:
+        0 0 30px rgba(175, 140, 180, 0.14);
+}
+
+
+/* WORD CARDS */
+
+.word-card {
+    background: rgba(18, 15, 24, 0.68);
+
+    border: 1px solid rgba(155, 130, 165, 0.15);
+
+    box-shadow:
+        0 0 25px rgba(75, 55, 90, 0.04);
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.word-card span {
+    color: #75627c;
+}
+
+.word-card h3 {
+    color: #d8b9d0;
+}
+
+.word-card p {
+    color: #aaa1ad;
+}
+
+.word-card:hover {
+    border-color: rgba(190, 155, 195, 0.32);
+
+    background: rgba(25, 20, 32, 0.78);
+
+    box-shadow:
+        0 0 30px rgba(110, 80, 130, 0.10);
+}
+
+
+/* =========================================================
+   PHOTO SECTION
+   ========================================================= */
+
+.photo-frame {
+    border-color: rgba(155, 130, 165, 0.20);
+
+    box-shadow:
+        0 0 35px rgba(75, 55, 95, 0.10);
+}
+
+.photo-caption {
+    color: #9b899e;
+}
+
+
+/* =========================================================
+   MESSAGE SECTION
+   ========================================================= */
+
+.message-content h2 {
+    color: #eee8f0;
+
+    text-shadow:
+        0 0 30px rgba(175, 140, 180, 0.12);
+}
+
+.message-text {
+    color: #b5aab6;
+}
+
+.message-line {
+    background: rgba(160, 130, 165, 0.25);
+}
+
+
+/* =========================================================
+   FINAL SECTION
+   ========================================================= */
+
+.final-section {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(100, 70, 125, 0.11),
+            transparent 50%
+        ),
+        #05030b;
+}
+
+.final-content h1 {
+    color: #eee8f0;
+
+    text-shadow:
+        0 0 35px rgba(175, 140, 180, 0.14);
+}
+
+.final-message {
+    color: #b5aab6;
+}
+
+.final-signature {
+    color: #c5a2bd;
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+   ========================================================= */
+
+.floating-heart {
+    color: rgba(190, 150, 200, 0.18);
+
+    text-shadow:
+        0 0 12px rgba(170, 125, 185, 0.18);
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: rgba(105, 75, 125, 0.55);
+    color: #f5edf5;
+}
+/* =========================================================
+   FINAL COLOUR OVERRIDE
+   SAME LOOK AS "US IN 10 WORDS"
+   ========================================================= */
+
+body {
+    background: #05030b !important;
+    color: #eee8f0 !important;
+}
+
+
+/* =========================================================
+   ALL PAGE BACKGROUNDS
+   ========================================================= */
+
+.photo-section,
+.message-section,
+.little-things,
+.open-when,
+.song-section,
+.words-section,
+.final-section {
+    background: #05030b !important;
+}
+
+
+/* soft purple night glow */
+.photo-section::before,
+.message-section::before,
+.little-things::before,
+.open-when::before,
+.song-section::before,
+.words-section::before,
+.final-section::before {
+    background:
+        radial-gradient(
+            circle,
+            rgba(105, 75, 125, 0.10),
+            transparent 60%
+        ) !important;
+}
+
+
+/* =========================================================
+   ALL MAIN HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+    color: #eee8f0 !important;
+}
+
+.handwritten {
+    color: #b99dbd !important;
+}
+
+
+/* =========================================================
+   LITTLE THINGS CARDS
+   ========================================================= */
+
+.love-card {
+    background: rgba(18, 15, 24, 0.82) !important;
+
+    border: 1px solid rgba(155, 130, 165, 0.16) !important;
+
+    box-shadow:
+        0 0 25px rgba(80, 55, 100, 0.06) !important;
+}
+
+.love-card h3 {
+    color: #d8b9d0 !important;
+}
+
+.love-card p {
+    color: #aaa1ad !important;
+}
+
+.love-card .card-number {
+    color: #75627c !important;
+}
+
+
+/* =========================================================
+   OPEN WHEN CARDS
+   ========================================================= */
+
+.letter-card {
+    background: transparent !important;
+
+    border: 1px solid rgba(155, 130, 165, 0.17) !important;
+
+    box-shadow:
+        0 0 25px rgba(75, 55, 95, 0.07) !important;
+}
+
+
+/* FRONT */
+
+.letter-card .letter-front {
+    background:
+        linear-gradient(
+            180deg,
+            #0c0911 0%,
+            #15111a 100%
+        ) !important;
+}
+
+.letter-card .letter-front h3 {
+    color: #eee8f0 !important;
+}
+
+.letter-card .letter-front p {
+    color: #918795 !important;
+}
+
+.letter-card .letter-icon {
+    color: #d29bc0 !important;
+}
+
+
+/* BACK */
+
+.letter-card .letter-back {
+    background:
+        linear-gradient(
+            180deg,
+            #2a1d30 0%,
+            #1b1421 100%
+        ) !important;
+}
+
+.letter-card .letter-back p {
+    color: #ddd0dc !important;
+}
+
+.letter-card .letter-back span {
+    color: #c99bbd !important;
+}
+
+
+/* =========================================================
+   SONG
+   ========================================================= */
+
+.song-card {
+    background:
+        linear-gradient(
+            135deg,
+            #0c0911,
+            #1d1623
+        ) !important;
+
+    border: 1px solid rgba(155, 130, 165, 0.17) !important;
+
+    box-shadow:
+        0 0 35px rgba(75, 55, 95, 0.08) !important;
+}
+
+.song-label {
+    color: #a989a9 !important;
+}
+
+.song-info h3 {
+    color: #e8dce8 !important;
+}
+
+.song-movie {
+    color: #918492 !important;
+}
+
+.song-note {
+    color: #aaa0ad !important;
+}
+
+.song-line {
+    background: rgba(165, 135, 170, 0.25) !important;
+}
+
+
+/* PLAY BUTTON */
+
+.play-button {
+    background: #231a2b !important;
+    border: 1px solid rgba(185, 150, 190, 0.28) !important;
+    color: #d7b3cf !important;
+}
+
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
+
+.photo-frame {
+    border-color: rgba(155, 130, 165, 0.20) !important;
+
+    box-shadow:
+        0 0 35px rgba(75, 55, 95, 0.10) !important;
+}
+
+.photo-caption {
+    color: #9b899e !important;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message-text {
+    color: #b5aab6 !important;
+}
+
+.message-line {
+    background: rgba(160, 130, 165, 0.25) !important;
+}
+
+
+/* =========================================================
+   10 WORDS
+   ========================================================= */
+
+.words-section {
+    background: #05030b !important;
+}
+
+.words-heading .handwritten {
+    color: #b99dbd !important;
+}
+
+.words-heading h2 {
+    color: #eee8f0 !important;
+}
+
+.word-card {
+    background: rgba(18, 15, 24, 0.68) !important;
+
+    border: 1px solid rgba(155, 130, 165, 0.15) !important;
+
+    box-shadow:
+        0 0 25px rgba(75, 55, 90, 0.04) !important;
+}
+
+.word-card span {
+    color: #75627c !important;
+}
+
+.word-card h3 {
+    color: #d8b9d0 !important;
+}
+
+.word-card p {
+    color: #aaa1ad !important;
+}
+
+
+/* =========================================================
+   FINAL PAGE
+   ========================================================= */
+
+.final-section {
+    background: #05030b !important;
+}
+
+.final-content h1 {
+    color: #eee8f0 !important;
+}
+
+.final-message {
+    color: #b5aab6 !important;
+}
+
+.final-signature {
+    color: #c5a2bd !important;
+}
+
+
+/* =========================================================
+   REMOVE PAGE NUMBERS
+   ========================================================= */
+
+.section-number {
+    display: none !important;
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+   ========================================================= */
+
+.floating-heart {
+    color: rgba(190, 150, 200, 0.18) !important;
+
+    text-shadow:
+        0 0 12px rgba(170, 125, 185, 0.18) !important;
+}
+
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+    background: rgba(105, 75, 125, 0.55) !important;
+    color: #f5edf5 !important;
+}
