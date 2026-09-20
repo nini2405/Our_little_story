@@ -4228,3 +4228,7 @@ body {
     background: rgba(180, 100, 150, 0.045);
     box-shadow: 0 0 30px rgba(180, 100, 150, 0.08);
 }
+/* REMOVE PAGE / SECTION NUMBERS */
+.section-number {
+    display: none !important;
+}
